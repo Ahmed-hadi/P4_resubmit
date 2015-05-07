@@ -10,7 +10,7 @@ To get started, download the entire directory from my github (https://github.com
 - Image compression: images were rescaled and resized to the final layout dimensions.
 - Moved the google font and the style.css links to the end of the body.  
 - Added an inline style block in the head where I put the styles needed to properly render margins, paddings, colors, and borders.
-- Added `media="print"` to the link to print.css.
+- Added `media="print"` to the link to print.css and minified.
 
 ### Frame rate optimization
 - Loop optimization: unnecessary JS operations were pulled out of `for` loops where possible in changePizzaSize() at `views/js/main.js`.

@@ -430,12 +430,15 @@ var resizePizzas = function (size) {
     }
 
     // Get a list of the elements that need to be updated.
-    var elems = document.getElementsByClassName("randomPizzaContainer");
+    var elems = document.getElementsByClassName(".randomPizzaContainer");
 
     // Update elements' class.
     for (var i = 0; i < elems.length; i++) {
-        // Remove the old class and Add the new class.
-        elems[i].classList.remove(elems[i].classList[1]).add(newClass);
+        // Remove the old class.
+        //elems[i].classList.remove(elems[i].classList[1]).add(newClass);
+        elems[i].classList.remove(elems[i].classList[1]);
+        // Add the new class.
+        elems[i].classList.add(newClass);
     }
 
     // User Timing API is awesome
@@ -525,9 +528,10 @@ function updatePositions() {
 // DOMContentLoaded event call back.  It has been improved to generate just the right
 // number of elements based on the size of the window and to make only one DOM manipulation.
 function generateMovers() {
-    var cols = getDims().cols;
-    var rows = getDims().rows;
-    var s = getDims().s;
+    var result = getDims();
+	var cols = result.cols;
+    var rows = result.rows;
+    var s = result.s;
 
     // As before, this variable will be use to
     // build the html inside the loop.
